@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b30aifeq7cwg8"]
+
+[ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_16qt5"]
+[ext_resource type="Texture2D" uid="uid://cybhqm145fgog" path="res://Sprites/starfield_shader_cover_image-3.png" id="1_q5q2p"]
+
+[node name="Stage 1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1500.0
+offset_bottom = 1000.0
+texture = ExtResource("1_q5q2p")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_16qt5")]
+position = Vector2(552, 305)

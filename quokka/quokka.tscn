@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://x3qoxw28m71t"]
-
-[ext_resource type="Texture2D" uid="uid://d0q8akb6iv01e" path="res://icon.svg" id="1_wi5gs"]
-[ext_resource type="Script" path="res://quokka/quokka.gd" id="2_3mhha"]
-
-[node name="Quokka" type="Sprite2D"]
-texture = ExtResource("1_wi5gs")
-script = ExtResource("2_3mhha")
