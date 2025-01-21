@@ -1,16 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://b30aifeq7cwg8"]
+[gd_scene load_steps=5 format=3 uid="uid://b30aifeq7cwg8"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_16qt5"]
-[ext_resource type="Texture2D" uid="uid://cybhqm145fgog" path="res://Sprites/starfield_shader_cover_image-3.png" id="1_q5q2p"]
+[ext_resource type="Shader" path="res://Sprites/BackgroundShader.gdshader" id="1_d0qg0"]
+[ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/universe_background.webp" id="2_1h16d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grmxi"]
+shader = ExtResource("1_d0qg0")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 50.0
+shader_parameter/small_stars_far_size = 0.5
+shader_parameter/small_stars_near_size = 1.0
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.5
+shader_parameter/large_stars_near_size = 1.0
+shader_parameter/far_stars_color = Color(0.5, 0, 1, 1)
+shader_parameter/near_stars_color = Color(1, 1, 1, 1)
+shader_parameter/base_scroll_speed = 0.05
+shader_parameter/additional_scroll_speed = 0.05
 
 [node name="Stage 1" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1500.0
-offset_bottom = 1000.0
-texture = ExtResource("1_q5q2p")
-expand_mode = 1
-stretch_mode = 1
+[node name="BackgroundShader" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_grmxi")
+position = Vector2(961, 565)
+scale = Vector2(2.17417, 2.17417)
+texture = ExtResource("2_1h16d")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_16qt5")]
-position = Vector2(552, 305)
+position = Vector2(952, 543)
