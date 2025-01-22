@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://7mmnu05bs488"]
 
 [ext_resource type="Script" path="res://Characters/enemy/enemy.gd" id="1_xjfbh"]
-[ext_resource type="Texture2D" uid="uid://d0q8akb6iv01e" path="res://icon.svg" id="2_c6lcm"]
+[ext_resource type="Texture2D" uid="uid://goi6t5kwpwy0" path="res://Sprites/Enemies/jellyfish.png" id="2_vqesi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0ggx"]
-radius = 57.85
+radius = 120.067
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -14,7 +14,9 @@ motion_mode = 1
 script = ExtResource("1_xjfbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c6lcm")
+position = Vector2(7.35938, 5.04385)
+scale = Vector2(0.614248, 0.582352)
+texture = ExtResource("2_vqesi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j0ggx")

@@ -26,6 +26,7 @@ func chaseTarget(speed: float, target: Node2D):
 
 func take_damage():
 	health -= 1
+	# place animation code here later, e.g. %enemy.play_hurt()
 	
 	if health <= 0:
 		queue_free()

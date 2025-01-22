@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b30aifeq7cwg8"]
+[gd_scene load_steps=7 format=3 uid="uid://b5bbngpgnch4w"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_16qt5"]
+[ext_resource type="Script" path="res://Levels/stage_1.gd" id="1_a0p54"]
 [ext_resource type="Shader" path="res://Sprites/BackgroundShader.gdshader" id="1_d0qg0"]
 [ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/universe_background.webp" id="2_1h16d"]
+[ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="4_lyjoi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_grmxi"]
 shader = ExtResource("1_d0qg0")
@@ -19,12 +21,47 @@ shader_parameter/base_scroll_speed = 0.05
 shader_parameter/additional_scroll_speed = 0.05
 
 [node name="Stage 1" type="Node2D"]
+script = ExtResource("1_a0p54")
 
-[node name="BackgroundShader" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="BackgroundShader" type="Sprite2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_grmxi")
 position = Vector2(961, 565)
 scale = Vector2(2.17417, 2.17417)
 texture = ExtResource("2_1h16d")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_16qt5")]
-position = Vector2(952, 543)
+[node name="Player" parent="." instance=ExtResource("1_16qt5")]
+position = Vector2(1008, 488)
+
+[node name="EnemyManager" parent="." instance=ExtResource("4_lyjoi")]
+position = Vector2(973, 532)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.811765)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 156
+text = "Game Over"
