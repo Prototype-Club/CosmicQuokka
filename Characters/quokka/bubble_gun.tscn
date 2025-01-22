@@ -18,7 +18,7 @@ shape = SubResource("CircleShape2D_88wdb")
 scale = Vector2(-10.75, 0.666667)
 
 [node name="Bubble" type="Sprite2D" parent="WeaponPivot"]
-modulate = Color(0.600009, 0.839054, 0.927259, 1)
+modulate = Color(0.762155, 0.482433, 0.0429098, 0.870588)
 position = Vector2(-9.30233, -30)
 rotation = 3.14159
 scale = Vector2(0.00516493, -0.0823035)

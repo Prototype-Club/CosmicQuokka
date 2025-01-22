@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvn2ttnt65nx5"]
+[gd_scene load_steps=9 format=3 uid="uid://cvn2ttnt65nx5"]
 
 [ext_resource type="Script" path="res://Characters/quokka/quokka.gd" id="1_kjci0"]
 [ext_resource type="Texture2D" uid="uid://bqibn7rhi81y8" path="res://Sprites/quokka-front.png" id="2_8xpty"]
 [ext_resource type="PackedScene" uid="uid://bcby2bm44r5od" path="res://Characters/quokka/bubble_gun.tscn" id="3_8gmbg"]
+[ext_resource type="Texture2D" uid="uid://qsmstsk04bqo" path="res://Sprites/bubble.png" id="4_0ceqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3j1w"]
 radius = 35.0143
@@ -60,3 +61,17 @@ value = 100.0
 show_percentage = false
 
 [node name="BubbleGun" parent="." instance=ExtResource("3_8gmbg")]
+
+[node name="Bubble" type="Sprite2D" parent="."]
+modulate = Color(0.545999, 0.747906, 0.964691, 0.427451)
+position = Vector2(-9.53674e-07, 3)
+scale = Vector2(0.162707, 0.162707)
+texture = ExtResource("4_0ceqx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
