@@ -1,33 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3s60lgcw4b83"]
+[gd_scene load_steps=3 format=3 uid="uid://cukfqetfwtdid"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_wlpv0"]
-[ext_resource type="PackedScene" uid="uid://7mmnu05bs488" path="res://Characters/enemy/enemy.tscn" id="2_d0yvg"]
+[ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="3_610vn"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wlpv0")]
 position = Vector2(183, 388)
 
-[node name="Enemy" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(899, 364)
-scale = Vector2(0.375, 0.375)
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Enemy2" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(862, 274)
-scale = Vector2(0.375, 0.375)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(837, 418)
-scale = Vector2(0.375, 0.375)
-
-[node name="Enemy4" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(924, 489)
-scale = Vector2(0.375, 0.375)
-
-[node name="Enemy5" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(1001, 433)
-scale = Vector2(0.375, 0.375)
-
-[node name="Enemy6" parent="." instance=ExtResource("2_d0yvg")]
-position = Vector2(1001, 287)
-scale = Vector2(0.375, 0.375)
+[node name="EnemyManager" parent="." instance=ExtResource("3_610vn")]
+position = Vector2(172, 355)
