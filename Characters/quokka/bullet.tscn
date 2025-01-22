@@ -8,6 +8,7 @@ radius = 37.1214
 
 [node name="Bullet" type="Area2D"]
 top_level = true
+collision_mask = 3
 script = ExtResource("1_mdqlq")
 
 [node name="Bubble" type="Sprite2D" parent="."]
