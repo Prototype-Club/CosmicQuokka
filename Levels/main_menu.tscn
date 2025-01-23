@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbddlbe4gpymq"]
+
+[ext_resource type="Texture2D" uid="uid://ida56r5pmh8o" path="res://Sprites/Background/Universe.png" id="1_0ab7v"]
+[ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_rqnwo"]
+[ext_resource type="Texture2D" uid="uid://cxs3qi8rbe23p" path="res://Sprites/Background/TypoTitle.png" id="2_tgvg3"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_rqnwo")
+
+[node name="Universe" type="Sprite2D" parent="."]
+position = Vector2(965, 601)
+scale = Vector2(0.336438, 0.333641)
+texture = ExtResource("1_0ab7v")
+
+[node name="TypoTitle" type="Sprite2D" parent="."]
+position = Vector2(916, 215)
+texture = ExtResource("2_tgvg3")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 744.0
+offset_top = 488.0
+offset_right = 1127.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 71
+text = "Play"
+
+[node name="Options" type="Button" parent="."]
+visible = false
+offset_left = 744.0
+offset_top = 617.0
+offset_right = 1127.0
+offset_bottom = 722.0
+theme_override_font_sizes/font_size = 71
+text = "Options"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

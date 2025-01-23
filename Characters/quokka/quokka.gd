@@ -10,6 +10,8 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * 600
 	move_and_slide()
 	
+	
+	
 	if velocity.length() > 0.0:
 		pass
 		#place animation code here later, e.g. %Quokka.play_walk_animation()
@@ -17,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		pass
 		# place animation code here later, e.g. %Quokka.play_idle_animation()
 	
-	const DAMAGE_RATE = 5.0
+	const DAMAGE_RATE = 500.0
 	var overlapping_mobs =  %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
