@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8r7bpvfojmgx"]
+
+[ext_resource type="Script" path="res://Characters/enemy/crab/crab.gd" id="1_f7sju"]
+[ext_resource type="Texture2D" uid="uid://bim7dff6whkkt" path="res://Sprites/Enemies/crab.png" id="1_v6h7u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q36w3"]
+radius = 316.0
+height = 1106.0
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.640374, 0.640374)
+script = ExtResource("1_f7sju")
+moveSpeed = 2
+health = 500
+
+[node name="Crab" type="Sprite2D" parent="."]
+position = Vector2(-1, 9)
+scale = Vector2(0.647222, 0.647222)
+texture = ExtResource("1_v6h7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_q36w3")

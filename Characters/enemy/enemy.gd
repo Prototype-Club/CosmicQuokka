@@ -30,3 +30,4 @@ func take_damage():
 	
 	if health <= 0:
 		queue_free()
+		Global.score += 1

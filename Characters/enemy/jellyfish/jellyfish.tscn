@@ -7,6 +7,7 @@
 radius = 120.067
 
 [node name="Jellyfish" type="CharacterBody2D"]
+scale = Vector2(0.633592, 0.633592)
 script = ExtResource("1_q8ik2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

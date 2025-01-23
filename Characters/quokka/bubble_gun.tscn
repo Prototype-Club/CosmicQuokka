@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qsmstsk04bqo" path="res://Sprites/bubble.png" id="1_oxgto"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_88wdb"]
-radius = 308.007
+radius = 383.047
 
 [node name="BubbleGun" type="Area2D"]
 collision_layer = 0

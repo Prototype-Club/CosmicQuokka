@@ -8,6 +8,14 @@ func _physics_process(delta):
 		var target_enemy = enemies_in_range[0] #can also use .front() at the end
 		look_at(target_enemy.global_position)
 
+	match Global.score:
+		50:
+			$Timer.wait_time = 0.22
+		150:
+			$Timer.wait_time = 0.2
+		300:
+			$Timer.wait_time = 0.16
+
 
 func shoot():
 	const BULLET = preload("res://Characters/quokka/bullet.tscn")

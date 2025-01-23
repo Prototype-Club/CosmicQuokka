@@ -24,13 +24,13 @@ offset_bottom = 593.0
 theme_override_font_sizes/font_size = 71
 text = "Play"
 
-[node name="Options" type="Button" parent="."]
-visible = false
+[node name="Quit" type="Button" parent="."]
 offset_left = 744.0
 offset_top = 617.0
 offset_right = 1127.0
 offset_bottom = 722.0
 theme_override_font_sizes/font_size = 71
-text = "Options"
+text = "Quit"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
