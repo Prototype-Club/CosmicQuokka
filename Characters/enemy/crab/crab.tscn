@@ -9,9 +9,10 @@ height = 1106.0
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.640374, 0.640374)
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_f7sju")
-moveSpeed = 2
-health = 500
+health = 200
 
 [node name="Crab" type="Sprite2D" parent="."]
 position = Vector2(-1, 9)

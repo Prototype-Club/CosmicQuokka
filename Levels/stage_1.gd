@@ -11,17 +11,18 @@ func distance_to_earth():
 
 
 func _process(delta: float) -> void:
-	%DistanceLabel.text = "Distance to Earth: %02d AU" %distance_to_earth()
+	%DistanceLabel.text = "Distance to Earth: %02d au" %distance_to_earth()
 	%ScoreLabel.text = str(Global.score)
 	
 	if Input.is_action_just_pressed("Pause"):
 		%GameOver.visible = true
 		get_tree().paused = true
+	
 
 
 func _on_countdown_timeout() -> void:
-	$EnemyManager.visible = false
-	
+	$EnemyManager.process_mode = Node.PROCESS_MODE_DISABLED
+	$EnemyManager2.process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_player_health_depleted() -> void:
