@@ -1,13 +1,27 @@
-extends RigidBody2D
+extends Enemy
+class_name Asteroid
 
-var rotationSpeed
+var rotationSpeed = 0
+var moveDirection = 0
+var speed = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	rotationSpeed = randf_range(-1,1)
-	print(rotationSpeed)
+	set_parameters()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	rotation += rotationSpeed/20
+	
+	#move_and_slide()
+
+func set_parameters():
+	rotationSpeed = randf_range(-1,1)
+	scale *= randf_range(0.7,1.1)
+	moveDirection = randf_range(0,360)
+	rotation_degrees = moveDirection
+	#speed = randf_range(0,100)
+	
+	#velocity = speed * Vector2.RIGHT.rotated(deg_to_rad(moveDirection))
+	
+	#print("moveDirection: %s" % moveDirection)
+	#print("Velocity: %s" % velocity)

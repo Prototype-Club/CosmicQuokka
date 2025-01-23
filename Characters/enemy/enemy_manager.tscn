@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3muihwqelhxo"]
+[gd_scene load_steps=5 format=3 uid="uid://3muihwqelhxo"]
 
 [ext_resource type="Script" path="res://Characters/enemy/enemy_manager.gd" id="1_bl12j"]
+[ext_resource type="PackedScene" uid="uid://tpmi70bi6n12" path="res://Characters/enemy/asteroid/asteroid.tscn" id="2_bcjeg"]
+[ext_resource type="PackedScene" uid="uid://cyjdygfnkxjy" path="res://Characters/enemy/asteroid/asteroid1.tscn" id="3_j3wrw"]
 
 [sub_resource type="Curve2D" id="Curve2D_uamhl"]
 _data = {
@@ -12,6 +14,7 @@ point_count = 5
 light_mask = 0
 visibility_layer = 6
 script = ExtResource("1_bl12j")
+asteroids = Array[PackedScene]([ExtResource("2_bcjeg"), ExtResource("3_j3wrw")])
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-1185.47, -739.755)
@@ -24,8 +27,8 @@ visible = false
 position = Vector2(-71, -76)
 rotation = -0.004352
 
-[node name="Timer" type="Timer" parent="."]
+[node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_timer_timeout"]
