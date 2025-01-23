@@ -9,14 +9,18 @@ _data = {
 point_count = 5
 
 [node name="EnemyManager" type="Node2D"]
+light_mask = 0
+visibility_layer = 6
 script = ExtResource("1_bl12j")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-940, -484)
+position = Vector2(-1185.47, -739.755)
+scale = Vector2(1.23335, 1.48523)
 curve = SubResource("Curve2D_uamhl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-71, -76)
 rotation = -0.004352
 
