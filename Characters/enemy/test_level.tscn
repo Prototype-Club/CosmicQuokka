@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cukfqetfwtdid"]
+[gd_scene load_steps=4 format=3 uid="uid://cukfqetfwtdid"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_wlpv0"]
 [ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="3_610vn"]
+[ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/universe_background.webp" id="3_g8c1p"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wlpv0")]
 position = Vector2(183, 388)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="EnemyManager" parent="." instance=ExtResource("3_610vn")]
 position = Vector2(172, 355)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+offset_left = -10763.0
+offset_top = -5445.0
+offset_right = 11091.0
+offset_bottom = 6180.0
+texture = ExtResource("3_g8c1p")
+expand_mode = 1
+stretch_mode = 1
