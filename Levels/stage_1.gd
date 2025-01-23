@@ -1,8 +1,23 @@
 extends Node2D
 
 
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+func _ready() -> void:
+	%Countdown.start()
+
+func distance_to_earth():
+	var time_left = %Countdown.time_left
+	var second = int(time_left)
+	return [second]
+
+
+func _process(delta: float) -> void:
+	%DistanceLabel.text = "Distance to Earth: %02d AU" %distance_to_earth()
+	%ScoreLabel.text = str(Global.score)
+
+
+func _on_countdown_timeout() -> void:
+	$EnemyManager.visible = false
+	
 
 
 func _on_player_health_depleted() -> void:

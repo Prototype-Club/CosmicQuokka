@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_wlpv0"]
 [ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="3_610vn"]
-[ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/universe_background.webp" id="3_g8c1p"]
+[ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/Background/universe_background.webp" id="3_g8c1p"]
 
 [node name="TestLevel" type="Node2D"]
 
