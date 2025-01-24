@@ -49,7 +49,7 @@ func spawn_enemy():
 			spawn_position(i)
 	
 	if enemyList.size() < enemyMax:
-		var new_enemy = enemyTypes[0] #TODO: pick random enemies from list
+		var new_enemy = enemyTypes[randi_range(0, enemyTypes.size()-1)]
 		enemyList.append(spawn_entity(new_enemy))
 
 func spawn_asteroid():
@@ -78,6 +78,6 @@ func _on_enemy_timer_timeout() -> void:
 	spawn_asteroid()
 
 func _on_crab_spawn():
-	enemyMax = 0
+	enemyMax = 5
 	var crab = spawn_entity(giantEnemyCrab) as Crab
 	crab.healthBarRef = %CrabHealth
