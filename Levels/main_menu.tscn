@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ida56r5pmh8o" path="res://Sprites/Background/Universe.png" id="1_0ab7v"]
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_rqnwo"]
-[ext_resource type="Texture2D" uid="uid://cxs3qi8rbe23p" path="res://Sprites/Background/TypoTitle.png" id="2_tgvg3"]
+[ext_resource type="Texture2D" uid="uid://n7kwkeo5wnbp" path="res://Sprites/Background/title.png" id="3_yxyf3"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_rqnwo")
@@ -12,9 +12,9 @@ position = Vector2(965, 601)
 scale = Vector2(0.336438, 0.333641)
 texture = ExtResource("1_0ab7v")
 
-[node name="TypoTitle" type="Sprite2D" parent="."]
+[node name="Title" type="Sprite2D" parent="."]
 position = Vector2(916, 215)
-texture = ExtResource("2_tgvg3")
+texture = ExtResource("3_yxyf3")
 
 [node name="Start" type="Button" parent="."]
 offset_left = 744.0
