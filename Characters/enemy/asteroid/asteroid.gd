@@ -25,3 +25,6 @@ func set_parameters():
 	
 	#print("moveDirection: %s" % moveDirection)
 	#print("Velocity: %s" % velocity)
+
+func destroy():
+	queue_free()

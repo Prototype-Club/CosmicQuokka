@@ -26,8 +26,6 @@ func _process(delta: float) -> void:
 
 
 func _on_countdown_timeout() -> void:
-	$EnemyManager.process_mode = Node.PROCESS_MODE_DISABLED
-	$EnemyManager2.process_mode = Node.PROCESS_MODE_INHERIT
 	%CrabHealth.visible = true
 
 

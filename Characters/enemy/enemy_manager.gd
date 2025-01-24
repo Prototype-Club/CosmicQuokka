@@ -6,6 +6,8 @@ extends Node2D
 @export var enemyMax: int = 30
 var enemyList: Array[Node2D] = []
 
+@export var giantEnemyCrab: PackedScene = preload("res://Characters/enemy/crab/crab.tscn")
+
 #@export var asteroid: PackedScene = preload("res://Characters/enemy/asteroid/asteroid.tscn")
 @export var asteroids: Array[PackedScene] = [preload("res://Characters/enemy/asteroid/asteroid.tscn")]
 @export var asteroidMax: int = 15
@@ -47,7 +49,7 @@ func spawn_enemy():
 			spawn_position(i)
 	
 	if enemyList.size() < enemyMax:
-		var new_enemy = enemyTypes[0] #TODO: pick random enemies from list
+		var new_enemy = enemyTypes[randi_range(0, enemyTypes.size()-1)]
 		enemyList.append(spawn_entity(new_enemy))
 
 func spawn_asteroid():
@@ -74,3 +76,8 @@ func sanitize_array(dirty_array: Array[Node2D]) -> Array[Node2D]:
 func _on_enemy_timer_timeout() -> void:
 	spawn_enemy()
 	spawn_asteroid()
+
+func _on_crab_spawn():
+	enemyMax = 5
+	var crab = spawn_entity(giantEnemyCrab) as Crab
+	crab.healthBarRef = %CrabHealth

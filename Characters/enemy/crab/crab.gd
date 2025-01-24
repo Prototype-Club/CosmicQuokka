@@ -1,10 +1,13 @@
-class_name crab
+class_name Crab
 extends CharacterBody2D
 
 var playerTarget
 @export var moveSpeed := 1
 @export var health := 200.0
-var healthBarRef
+
+@export var crab: PackedScene
+
+var healthBarRef : ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,11 +27,16 @@ func chaseTarget(speed: float, target: Node2D):
 	var direction := Vector2(playerTarget.position.x - position.x , playerTarget.position.y - position.y)
 	velocity = direction * moveSpeed
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collisionObject = get_slide_collision(i).get_collider()
+		#print("Collided with: ", collision.get_collider().name)
+		if collisionObject is Asteroid:
+			(collisionObject as Asteroid).destroy()
 
 func take_damage():
 	health -= 1
 	# place animation code here later, e.g. %enemy.play_hurt()
-	%CrabHealth.value = health
+	healthBarRef.value = health
 
 	if health <= 0:
 		queue_free()
