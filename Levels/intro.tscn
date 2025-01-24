@@ -385,6 +385,13 @@ _data = {
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_rcdhb")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Quokka-left")
+libraries = {
+"": SubResource("AnimationLibrary_bfue4")
+}
+autoplay = "OpeningScene"
+
 [node name="UniverseBackground" type="Sprite2D" parent="."]
 position = Vector2(969, 547)
 scale = Vector2(2.41673, 1.94143)
@@ -410,13 +417,6 @@ texture = ExtResource("2_sqw3s")
 position = Vector2(1015, 525)
 scale = Vector2(0.103378, 0.103378)
 texture = ExtResource("3_rr3uh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Quokka-left")
-libraries = {
-"": SubResource("AnimationLibrary_bfue4")
-}
-autoplay = "OpeningScene"
 
 [node name="Quokka-front" type="Sprite2D" parent="."]
 position = Vector2(848, 652)
