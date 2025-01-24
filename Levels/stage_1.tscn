@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5bbngpgnch4w"]
+[gd_scene load_steps=12 format=3 uid="uid://b5bbngpgnch4w"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_16qt5"]
 [ext_resource type="Script" path="res://Levels/stage_1.gd" id="1_a0p54"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/Background/universe_background.webp" id="2_1h16d"]
 [ext_resource type="Texture2D" uid="uid://cjqu0ce3jijfw" path="res://Sprites/Background/earth.png" id="4_k6j5s"]
 [ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="4_lyjoi"]
-[ext_resource type="PackedScene" uid="uid://c8r7bpvfojmgx" path="res://Characters/enemy/crab/crab.tscn" id="7_grs0n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_grmxi"]
 shader = ExtResource("1_d0qg0")
@@ -64,11 +63,6 @@ position = Vector2(960, 539)
 
 [node name="EnemyManager" parent="." instance=ExtResource("4_lyjoi")]
 position = Vector2(973, 532)
-
-[node name="EnemyManager2" parent="." instance=ExtResource("4_lyjoi")]
-process_mode = 4
-enemyTypes = Array[PackedScene]([ExtResource("7_grs0n")])
-enemyMax = 1
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -202,3 +196,4 @@ text = "Cancer"
 [connection signal="pressed" from="GameOver/ColorRect/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GameOver/ColorRect/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="HUD/Countdown" to="." method="_on_countdown_timeout"]
+[connection signal="timeout" from="HUD/Countdown" to="EnemyManager" method="_on_crab_spawn"]

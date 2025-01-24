@@ -1,10 +1,10 @@
-class_name crab
+class_name Crab
 extends CharacterBody2D
 
 var playerTarget
 @export var moveSpeed := 1
 @export var health := 200.0
-var healthBarRef
+var healthBarRef : ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +28,7 @@ func chaseTarget(speed: float, target: Node2D):
 func take_damage():
 	health -= 1
 	# place animation code here later, e.g. %enemy.play_hurt()
-	%CrabHealth.value = health
+	healthBarRef.value = health
 
 	if health <= 0:
 		queue_free()
