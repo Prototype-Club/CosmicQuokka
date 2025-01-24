@@ -11,9 +11,9 @@ func _physics_process(delta):
 	match Global.score:
 		50:
 			$Timer.wait_time = 0.22
-		150:
+		100:
 			$Timer.wait_time = 0.2
-		300:
+		200:
 			$Timer.wait_time = 0.16
 
 

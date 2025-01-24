@@ -12,7 +12,6 @@ scale = Vector2(0.640374, 0.640374)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_f7sju")
-health = 200
 
 [node name="Crab" type="Sprite2D" parent="."]
 position = Vector2(-1, 9)

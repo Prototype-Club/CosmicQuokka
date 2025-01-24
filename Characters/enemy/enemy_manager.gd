@@ -60,7 +60,7 @@ func spawn_asteroid():
 			
 	if asteroidList.size() < asteroidMax:
 		#var new_asteroid = asteroids[0] #TODO: pick random asteroid from list
-		print("%s mod %s = %s" % [asteroidList.size(),asteroids.size(),asteroidList.size()%asteroids.size()])
+		#print("%s mod %s = %s" % [asteroidList.size(),asteroids.size(),asteroidList.size()%asteroids.size()])
 		var new_asteroid = asteroids[asteroidList.size()%asteroids.size()] #cycles through asteroid types
 		asteroidList.append(spawn_entity(new_asteroid))
 		
