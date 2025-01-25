@@ -59,6 +59,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pwqkt")
 text = "Play"
 script = ExtResource("4_cwbyw")
 
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = ExtResource("4_g3nua")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m6qpe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xen7")
+text = "Credits"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 71
@@ -67,5 +75,105 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m6qpe")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5xen7")
 text = "Quit"
 
+[node name="CreditsWindow" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CreditsWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.811765)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsWindow/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -952.5
+offset_right = 952.5
+offset_bottom = 530.0
+grow_horizontal = 2
+
+[node name="Programmers" type="RichTextLabel" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/bold_italics_font_size = 61
+theme_override_font_sizes/italics_font_size = 61
+theme_override_font_sizes/mono_font_size = 61
+theme_override_font_sizes/normal_font_size = 61
+theme_override_font_sizes/bold_font_size = 61
+bbcode_enabled = true
+text = "[pulse freq=1][rainbow freq=1][center]Programmers"
+fit_content = true
+tab_size = 24
+
+[node name="Programmers2" type="Label" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Some1onearth
+jonathan.wang18"
+horizontal_alignment = 1
+
+[node name="Artists" type="RichTextLabel" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/bold_italics_font_size = 61
+theme_override_font_sizes/italics_font_size = 61
+theme_override_font_sizes/mono_font_size = 61
+theme_override_font_sizes/normal_font_size = 61
+theme_override_font_sizes/bold_font_size = 61
+bbcode_enabled = true
+text = "[pulse freq=1][rainbow freq=1][center]Artists
+"
+fit_content = true
+tab_size = 24
+
+[node name="Artists2" type="Label" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Avidys
+\"Anonymous person\""
+horizontal_alignment = 1
+
+[node name="Shader" type="RichTextLabel" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/bold_italics_font_size = 61
+theme_override_font_sizes/italics_font_size = 61
+theme_override_font_sizes/mono_font_size = 61
+theme_override_font_sizes/normal_font_size = 61
+theme_override_font_sizes/bold_font_size = 61
+bbcode_enabled = true
+text = "[pulse freq=1][rainbow freq=1][center]Scrolling Stars Shader"
+fit_content = true
+tab_size = 24
+
+[node name="Artists3" type="Label" parent="CreditsWindow/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Steampunkdemon on GodotShaders.com
+
+https://godotshaders.com/shader/pixelated-starfield-with-parallax-scrolling-effect/
+"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="CreditsWindow"]
+offset_left = 634.0
+offset_top = 922.0
+offset_right = 1226.0
+offset_bottom = 1019.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = ExtResource("4_g3nua")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m6qpe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xen7")
+text = "Back"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CreditsWindow/Back" to="." method="_on_back_pressed"]
