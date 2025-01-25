@@ -8,10 +8,8 @@ var speed = 0
 func _ready() -> void:
 	set_parameters()
 
-
 func _physics_process(delta: float) -> void:
 	rotation += rotationSpeed/20
-	
 	#move_and_slide()
 
 func set_parameters():
@@ -28,3 +26,9 @@ func set_parameters():
 
 func destroy():
 	queue_free()
+	
+	const AsteroidParticles = preload("res://Characters/enemy/asteroid/asteroid_particles.tscn")
+	var bang = AsteroidParticles.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
+	get_parent().add_child(bang)
+	bang.global_position = global_position
+	

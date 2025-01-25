@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1vt5y7exdiy2"]
+
+[ext_resource type="Texture2D" uid="uid://cnoi7ygnomhvk" path="res://Sprites/Enemies/asteroid1.png" id="1_uae8a"]
+[ext_resource type="Script" path="res://Characters/enemy/asteroid/asteroid_particles.gd" id="2_yifbo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dv5t4"]
+particle_flag_disable_z = true
+angle_min = -34.5
+angle_max = 363.7
+radial_velocity_min = 55.17
+radial_velocity_max = 368.74
+radial_accel_min = 48.24
+radial_accel_max = 76.06
+tangential_accel_min = -23.23
+tangential_accel_max = 58.46
+scale_min = 0.01
+scale_max = 0.07
+turbulence_noise_strength = 11.11
+turbulence_noise_scale = 10.0
+
+[node name="AsteroidParticles" type="GPUParticles2D"]
+position = Vector2(3, 2)
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_dv5t4")
+texture = ExtResource("1_uae8a")
+one_shot = true
+speed_scale = 2.65
+explosiveness = 0.81
+script = ExtResource("2_yifbo")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

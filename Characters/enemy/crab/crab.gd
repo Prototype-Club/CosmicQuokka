@@ -32,6 +32,7 @@ func chaseTarget(speed: float, target: Node2D):
 		#print("Collided with: ", collision.get_collider().name)
 		if collisionObject is Asteroid:
 			(collisionObject as Asteroid).destroy()
+			
 
 func take_damage():
 	health -= 1

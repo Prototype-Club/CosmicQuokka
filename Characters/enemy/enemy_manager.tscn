@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Characters/enemy/enemy_manager.gd" id="1_bl12j"]
 [ext_resource type="PackedScene" uid="uid://tpmi70bi6n12" path="res://Characters/enemy/asteroid/asteroid.tscn" id="2_bcjeg"]
-[ext_resource type="PackedScene" uid="uid://cyjdygfnkxjy" path="res://Characters/enemy/asteroid/asteroid1.tscn" id="3_j3wrw"]
+[ext_resource type="PackedScene" uid="uid://452nyd0l4yse" path="res://Characters/enemy/asteroid/asteroid1.tscn" id="3_j3wrw"]
 
 [sub_resource type="Curve2D" id="Curve2D_uamhl"]
 _data = {
