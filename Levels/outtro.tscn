@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddfmx0v5o5ifr"]
+[gd_scene load_steps=19 format=3 uid="uid://ddfmx0v5o5ifr"]
 
 [ext_resource type="Script" path="res://Levels/outtro.gd" id="1_qnkb1"]
 [ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/Background/universe_background.webp" id="2_anhqt"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bqibn7rhi81y8" path="res://Sprites/quokka-front.png" id="7_1k3v6"]
 [ext_resource type="Texture2D" uid="uid://qsmstsk04bqo" path="res://Sprites/bubble.png" id="8_np104"]
 [ext_resource type="Texture2D" uid="uid://bim7dff6whkkt" path="res://Sprites/Enemies/crab.png" id="9_sdn12"]
+[ext_resource type="StyleBox" uid="uid://d0mil3c4uu112" path="res://Levels/buttonfocustheme.tres" id="10_4ggfk"]
+[ext_resource type="Script" path="res://Levels/controller_button.gd" id="10_m8wwo"]
 [ext_resource type="Texture2D" uid="uid://dlr8h32rihnhb" path="res://Sprites/Bubble3.png" id="10_uxpdj"]
 
 [sub_resource type="Animation" id="Animation_5jv8o"]
@@ -850,9 +852,22 @@ turbulence_noise_scale = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjvqv"]
 bg_color = Color(0.709041, 0.107031, 0.518971, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl8di"]
 bg_color = Color(0.157025, 0.0835905, 0.0339797, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Outtro" type="Node2D"]
 script = ExtResource("1_qnkb1")
@@ -925,28 +940,30 @@ theme_override_font_sizes/bold_font_size = 120
 bbcode_enabled = true
 text = "[wave amp=90 freq=10][rainbow freq=1]Quokka has defeated Cancer!"
 
-[node name="Main Menu" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
-offset_left = 920.0
-offset_top = 654.0
-offset_right = 1046.0
-offset_bottom = 726.0
+offset_left = 749.0
+offset_top = 568.0
+offset_right = 1111.0
+offset_bottom = 700.0
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = ExtResource("10_4ggfk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xjvqv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hl8di")
 text = "Main Menu"
+script = ExtResource("10_m8wwo")
 
-[node name="Quit" type="Button" parent="."]
-visible = false
-offset_left = 920.0
-offset_top = 741.0
-offset_right = 1046.0
-offset_bottom = 813.0
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = ExtResource("10_4ggfk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xjvqv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hl8di")
 text = "Quit"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

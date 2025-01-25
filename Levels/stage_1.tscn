@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5bbngpgnch4w"]
+[gd_scene load_steps=13 format=3 uid="uid://b5bbngpgnch4w"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_16qt5"]
 [ext_resource type="Script" path="res://Levels/stage_1.gd" id="1_a0p54"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/Background/universe_background.webp" id="2_1h16d"]
 [ext_resource type="Texture2D" uid="uid://cjqu0ce3jijfw" path="res://Sprites/Background/earth.png" id="4_k6j5s"]
 [ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="4_lyjoi"]
+[ext_resource type="Script" path="res://Levels/controller_button.gd" id="7_gnobt"]
+[ext_resource type="StyleBox" uid="uid://d0mil3c4uu112" path="res://Levels/buttonfocustheme.tres" id="7_xncpb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_grmxi"]
 shader = ExtResource("1_d0qg0")
@@ -20,9 +22,6 @@ shader_parameter/far_stars_color = Color(0.5, 0, 1, 1)
 shader_parameter/near_stars_color = Color(1, 1, 1, 1)
 shader_parameter/base_scroll_speed = 0.05
 shader_parameter/additional_scroll_speed = 0.05
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nrqd"]
-bg_color = Color(0.709041, 0.107031, 0.518971, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ilgh"]
 bg_color = Color(0.157025, 0.0835905, 0.0339797, 1)
@@ -92,40 +91,45 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
 
-[node name="Retry" type="Button" parent="GameOver/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/ColorRect"]
 process_mode = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -393.0
+offset_right = 270.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Retry" type="Button" parent="GameOver/ColorRect/VBoxContainer"]
 visible = false
-layout_mode = 0
-offset_left = 920.0
-offset_top = 654.0
-offset_right = 1046.0
-offset_bottom = 726.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
-theme_override_styles/hover = SubResource("StyleBoxFlat_2nrqd")
+theme_override_styles/focus = ExtResource("7_xncpb")
+theme_override_styles/hover_pressed = ExtResource("7_xncpb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ilgh")
 text = "Retry"
+script = ExtResource("7_gnobt")
 
-[node name="Resume" type="Button" parent="GameOver/ColorRect"]
-process_mode = 2
-layout_mode = 0
-offset_left = 920.0
-offset_top = 654.0
-offset_right = 1046.0
-offset_bottom = 726.0
+[node name="Resume" type="Button" parent="GameOver/ColorRect/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
-theme_override_styles/hover = SubResource("StyleBoxFlat_2nrqd")
+theme_override_styles/focus = ExtResource("7_xncpb")
+theme_override_styles/hover_pressed = ExtResource("7_xncpb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ilgh")
 text = "Resume"
+script = ExtResource("7_gnobt")
 
-[node name="Quit" type="Button" parent="GameOver/ColorRect"]
-process_mode = 2
-layout_mode = 0
-offset_left = 920.0
-offset_top = 741.0
-offset_right = 1046.0
-offset_bottom = 813.0
+[node name="Quit" type="Button" parent="GameOver/ColorRect/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
-theme_override_styles/hover = SubResource("StyleBoxFlat_2nrqd")
+theme_override_styles/focus = ExtResource("7_xncpb")
+theme_override_styles/hover_pressed = ExtResource("7_xncpb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ilgh")
 text = "Quit"
 
@@ -192,8 +196,8 @@ theme_override_font_sizes/font_size = 36
 text = "Cancer"
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="pressed" from="GameOver/ColorRect/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="GameOver/ColorRect/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="GameOver/ColorRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="GameOver/ColorRect/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="GameOver/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GameOver/ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="HUD/Countdown" to="." method="_on_countdown_timeout"]
 [connection signal="timeout" from="HUD/Countdown" to="EnemyManager" method="_on_crab_spawn"]

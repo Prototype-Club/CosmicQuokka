@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 	
 	%ScoreLabel.text = str(Global.score)
 	
+	
 	if Input.is_action_just_pressed("Pause"):
 		%GameOver.visible = true
 		%GameOver/ColorRect/Label.text = "Paused"
