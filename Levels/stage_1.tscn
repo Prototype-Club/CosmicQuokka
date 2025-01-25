@@ -163,7 +163,7 @@ text = "Distance to Earth"
 
 [node name="Countdown" type="Timer" parent="HUD"]
 unique_name_in_owner = true
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

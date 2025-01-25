@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3muihwqelhxo"]
+[gd_scene load_steps=7 format=3 uid="uid://3muihwqelhxo"]
 
 [ext_resource type="Script" path="res://Characters/enemy/enemy_manager.gd" id="1_bl12j"]
 [ext_resource type="PackedScene" uid="uid://tpmi70bi6n12" path="res://Characters/enemy/asteroid/asteroid.tscn" id="2_bcjeg"]
+[ext_resource type="PackedScene" uid="uid://7mmnu05bs488" path="res://Characters/enemy/enemy.tscn" id="2_c0ik7"]
+[ext_resource type="PackedScene" uid="uid://ce6yfhoolp34a" path="res://Characters/enemy/jellyfish/jellyfish.tscn" id="3_djx87"]
 [ext_resource type="PackedScene" uid="uid://452nyd0l4yse" path="res://Characters/enemy/asteroid/asteroid1.tscn" id="3_j3wrw"]
 
 [sub_resource type="Curve2D" id="Curve2D_uamhl"]
@@ -14,6 +16,7 @@ point_count = 5
 light_mask = 0
 visibility_layer = 6
 script = ExtResource("1_bl12j")
+enemyTypes = Array[PackedScene]([ExtResource("2_c0ik7"), ExtResource("3_djx87")])
 asteroids = Array[PackedScene]([ExtResource("2_bcjeg"), ExtResource("3_j3wrw")])
 
 [node name="Path2D" type="Path2D" parent="."]

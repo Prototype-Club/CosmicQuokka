@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 
 func chaseTarget(speed: float, target: Node2D):
 	#get direction of enemy to player
-	var direction := Vector2(playerTarget.position.x - position.x , playerTarget.position.y - position.y)
+	var direction := Vector2(playerTarget.position.x - position.x , playerTarget.position.y - position.y).normalized()
 	velocity = direction * moveSpeed
 	move_and_slide()
 

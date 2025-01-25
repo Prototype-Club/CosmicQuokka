@@ -1,17 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cukfqetfwtdid"]
+[gd_scene load_steps=6 format=3 uid="uid://cukfqetfwtdid"]
 
 [ext_resource type="PackedScene" uid="uid://cvn2ttnt65nx5" path="res://Characters/quokka/quokka.tscn" id="1_wlpv0"]
 [ext_resource type="PackedScene" uid="uid://3muihwqelhxo" path="res://Characters/enemy/enemy_manager.tscn" id="3_610vn"]
 [ext_resource type="Texture2D" uid="uid://brywkx4mth0oy" path="res://Sprites/Background/universe_background.webp" id="3_g8c1p"]
+[ext_resource type="PackedScene" uid="uid://ce6yfhoolp34a" path="res://Characters/enemy/jellyfish/jellyfish.tscn" id="4_2ahqo"]
+[ext_resource type="PackedScene" uid="uid://452nyd0l4yse" path="res://Characters/enemy/asteroid/asteroid1.tscn" id="5_g424p"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wlpv0")]
 position = Vector2(183, 388)
 
+[node name="BubbleGun" parent="CharacterBody2D" index="4"]
+process_mode = 4
+
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="EnemyManager" parent="." instance=ExtResource("3_610vn")]
+process_mode = 4
 position = Vector2(172, 355)
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -23,3 +29,23 @@ offset_bottom = 6180.0
 texture = ExtResource("3_g8c1p")
 expand_mode = 1
 stretch_mode = 1
+
+[node name="Jellyfish" parent="." instance=ExtResource("4_2ahqo")]
+position = Vector2(1018, 244)
+
+[node name="Jellyfish2" parent="." instance=ExtResource("4_2ahqo")]
+position = Vector2(972, 641)
+
+[node name="Asteroid1" parent="." instance=ExtResource("5_g424p")]
+position = Vector2(-554, 192)
+
+[node name="Asteroid2" parent="." instance=ExtResource("5_g424p")]
+position = Vector2(-645, 1131)
+
+[node name="Asteroid3" parent="." instance=ExtResource("5_g424p")]
+position = Vector2(439, 849)
+
+[node name="Asteroid4" parent="." instance=ExtResource("5_g424p")]
+position = Vector2(665, -122)
+
+[editable path="CharacterBody2D"]

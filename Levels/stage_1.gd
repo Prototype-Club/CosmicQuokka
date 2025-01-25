@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("Pause"):
+		print("pause pressed")
 		%GameOver.visible = true
 		%GameOver/ColorRect/Label.text = "Paused"
 		get_tree().paused = true
@@ -33,8 +34,8 @@ func _on_countdown_timeout() -> void:
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	%GameOver/ColorRect/Label.text = "Game Over"
-	$GameOver/ColorRect/Retry.visible = true
-	$GameOver/ColorRect/Resume.visible = false
+	$GameOver/ColorRect/VBoxContainer/Retry.visible = true
+	$GameOver/ColorRect/VBoxContainer/Resume.visible = false
 	get_tree().paused = true
 
 
