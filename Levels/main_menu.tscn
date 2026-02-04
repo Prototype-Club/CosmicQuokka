@@ -76,7 +76,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5xen7")
 text = "Quit"
 
 [node name="CreditsWindow" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CreditsWindow"]
 anchors_preset = 15
@@ -113,7 +112,7 @@ tab_size = 24
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "Some1onearth
-jonathan.wang18"
+Orkagan"
 horizontal_alignment = 1
 
 [node name="Artists" type="RichTextLabel" parent="CreditsWindow/ColorRect/VBoxContainer"]
